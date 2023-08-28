@@ -1,0 +1,581 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  --primary: rgb(187, 127, 36);
+  --bg: #010101;
+}
+body {
+  background-color: var(--bg);
+}
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.5rem 7%;
+  z-index: 9999;
+}
+.navbar .navbar-logo {
+  font-size: 2.3rem;
+  font-weight: 700;
+  font-style: italic;
+}
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-list a {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0.6rem;
+  color: black;
+}
+.navbar .navbar-list a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-list a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.2rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.1s linear;
+}
+.navbar .navbar-list a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .navbar-extra {
+  list-style: none;
+}
+.navbar .navbar-extra .navbar-search,
+.navbar-menu {
+  cursor: pointer;
+  display: inline-block;
+  /* margin: 0.3rem; */
+}
+.navbar .navbar-extra .navbar-menu {
+  display: none;
+}
+.navbar .navbar-extra input {
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  right: 90px;
+  padding: 6px;
+  border-radius: 25px;
+  z-index: -2;
+  width: 300px;
+  transform: scaleX(0);
+  transition: 0.5s linear;
+}
+.navbar .navbar-extra input.active {
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  right: 90px;
+  padding: 6px;
+  border-radius: 25px;
+  z-index: -2;
+  width: 300px;
+  transform: scaleX(1);
+}
+/* .navbar .navbar-extra form .navbar-search.active {
+  background-color: rgb(238, 233, 233);
+  border-radius: 0 0 0 0;
+  border-radius: 50%;
+  padding: 4px 5px;
+} */
+
+/* landing page */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 589px;
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-position: 0px;
+  background-repeat: no-repeat;
+  margin-top: 54px;
+}
+.landing h1 {
+  position: absolute;
+  top: 170px;
+  font-size: 5rem;
+  margin: 10px 10%;
+}
+.landing span {
+  color: var(--primary);
+}
+/* about*/
+.aboutus {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 7%;
+  width: 100%;
+  height: 630px;
+  background-image: url("../img/about3.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+}
+.aboutus .text {
+  font-size: 1.5rem;
+  width: 700px;
+  height: 300px;
+}
+.aboutus .text .heading {
+  font-weight: bold;
+}
+.aboutus .text .paragraf {
+  font-size: 2rem;
+}
+.about-gambar img {
+  border-radius: 50%;
+  position: absolute;
+  top: 170px;
+  right: 90px;
+  width: 300px;
+  height: 300px;
+  display: none;
+}
+.button-about button {
+  position: absolute;
+  top: 500px;
+  right: 600px;
+  width: 50px;
+  height: 40px;
+  border: 2px solid black;
+  background-color: var(--primary);
+  border-radius: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  transform: 0.5s linear;
+  cursor: pointer;
+}
+/* product */
+.product {
+  background-image: url("../img/about.jpg");
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px 7%;
+  text-align: center;
+}
+.product .product-teks {
+  font-size: 50px;
+  position: absolute;
+  top: 0px;
+  font-weight: 700;
+  font-style: italic;
+}
+.product .kopi1 {
+  width: 300px;
+  height: 410px;
+  border: 3px solid black;
+  background-color: white;
+  box-shadow: 3px 3px 10px black;
+}
+.product .kopi1 .gambar {
+  background-image: url("/img/kopi1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px;
+  width: 100%;
+  height: 300px;
+}
+.product .kopi1 p {
+  font-size: 1.2rem;
+}
+.product .kopi2 {
+  width: 300px;
+  height: 410px;
+  border: 3px solid black;
+  background-color: white;
+  box-shadow: 3px 3px 10px black;
+}
+.product .kopi2 .gambar {
+  background-image: url("/img/kopi2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -75px;
+  width: 100%;
+  height: 300px;
+}
+.product .kopi2 p {
+  font-size: 1.2rem;
+}
+.product .kopi3 {
+  width: 300px;
+  height: 410px;
+  border: 3px solid black;
+  background-color: white;
+  box-shadow: 3px 3px 10px black;
+}
+.product .kopi3 .gambar {
+  background-image: url("/img/kopi3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px;
+  width: 100%;
+  height: 300px;
+}
+.product .kopi3 p {
+  font-size: 1.2rem;
+}
+/* footer */
+.foot {
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* responsive */
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  /* navbar */
+  .navbar .navbar-extra {
+    display: inline-block;
+  }
+  .navbar .navbar-extra .navbar-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-list {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vw;
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .navbar .navbar-list a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.2rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.1s linear;
+  }
+  .navbar .navbar-list a:hover::after {
+    transform: scaleX(0.3);
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-list.active {
+    right: 0;
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-extra form .navbar-search {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+  }
+  .navbar .navbar-extra input {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 90px;
+    padding: 6px;
+    border-radius: 25px;
+    z-index: -2;
+    width: 200px;
+    transform: scaleX(0);
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-extra input.active {
+    transform: scaleX(1);
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 90px;
+    padding: 6px;
+    border-radius: 25px;
+    z-index: -2;
+    width: 200px;
+  }
+  /* landing */
+  .landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 587px;
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: 0px;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+  }
+  .landing h1 {
+    position: absolute;
+    top: 210px;
+    font-size: 4rem;
+    margin: 10px 10%;
+  }
+  /* about */
+  .aboutus {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 7%;
+    width: 100%;
+    height: 750px;
+    background-image: url("../img/about3.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-size: cover;
+  }
+  .aboutus .text {
+    font-size: 1.5rem;
+    width: 490px;
+    height: 200px;
+    /* margin-top: -250px; */
+  }
+  .aboutus .text .heading {
+    font-weight: bold;
+  }
+  .aboutus .text .paragraf {
+    font-size: 2rem;
+  }
+  .about-gambar img {
+    border-radius: 50%;
+    position: absolute;
+    top: 170px;
+    right: 90px;
+    width: 200px;
+    height: 200px;
+    display: none;
+  }
+  .button-about button {
+    position: absolute;
+    top: 650px;
+    right: 600px;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: var(--primary);
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    transform: 0.5s linear;
+    cursor: pointer;
+  }
+  /* product */
+  .product {
+    background-image: url("../img/about.jpg");
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 7%;
+    text-align: center;
+  }
+  .product .product-teks {
+    font-size: 50px;
+    position: absolute;
+    top: 0px;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+/* mobile */
+@media (max-width: 400px) {
+  html {
+    font-size: 55%;
+  }
+  /* navbar */
+  .navbar .navbar-extra .navbar-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-list {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vw;
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .navbar .navbar-list a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.2rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.1s linear;
+  }
+  .navbar .navbar-list a:hover::after {
+    transform: scaleX(0.3);
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-list.active {
+    right: 0;
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-extra form .navbar-search {
+    position: absolute;
+    top: 7px;
+    right: 100px;
+  }
+  .navbar .navbar-extra input {
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    right: 90px;
+    padding: 3px;
+    border-radius: 25px;
+    z-index: -2;
+    width: 120px;
+    transform: scaleX(0);
+    transition: 0.5s linear;
+  }
+  .navbar .navbar-extra input.active {
+    transform: scaleX(1);
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 90px;
+    padding: 3px;
+    border-radius: 25px;
+    z-index: -2;
+    width: 120px;
+  }
+  /* landing */
+  .landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 640px;
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: -78px;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+  }
+  .landing h1 {
+    position: absolute;
+    top: 230px;
+    font-size: 2.5rem;
+    margin: 10px 10%;
+  }
+  /* about */
+  .aboutus {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 7%;
+    width: 100%;
+    height: 900px;
+    background-image: url("../img/about3.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-size: cover;
+  }
+  .aboutus .text {
+    font-size: 1.5rem;
+    width: 490px;
+    height: 200px;
+    margin-top: -180px;
+  }
+  .aboutus .text .heading {
+    font-weight: bold;
+  }
+  .aboutus .text .paragraf {
+    font-size: 2rem;
+  }
+  .about-gambar img {
+    border-radius: 50%;
+    position: absolute;
+    top: 170px;
+    right: 90px;
+    width: 200px;
+    height: 200px;
+    display: none;
+  }
+  .button-about button {
+    position: absolute;
+    top: 590px;
+    right: 300px;
+    width: 50px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: var(--primary);
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    transform: 0.5s linear;
+    cursor: pointer;
+  }
+  /* product */
+  .product {
+    background-image: url("../img/about.jpg");
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 150px 7%;
+    text-align: center;
+  }
+  .product .product-teks {
+    font-size: 50px;
+    position: absolute;
+    top: 50px;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
